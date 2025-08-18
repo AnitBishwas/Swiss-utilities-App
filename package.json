@@ -1,0 +1,57 @@
+{
+  "name": "swiss-utilities-app",
+  "version": "2025.08.03",
+  "description": "Swiss utilities app",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kinngh/shopify-node-express-mongodb-app.git"
+  },
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon server/index.js --ignore client/ --ignore dist/ ",
+    "build": "vite build --config=./client/vite.config.js",
+    "start": "NODE_ENV=prod node server/index.js",
+    "-----> utils <-----": "",
+    "update": "ncu -u",
+    "pretty": "prettier --write .",
+    "-----> Tunnel <-----": "",
+    "ngrok:auth": "ngrok authtoken <your-auth-token>",
+    "ngrok": "ngrok http 8081",
+    "cloudflare": "cloudflared tunnel --url localhost:8081",
+    "-----> Shopify <-----": "",
+    "g:install": "npm i -g @shopify/cli@latest",
+    "shopify": "shopify",
+    "update:config": "node _developer/tomlWriter.js; npm run pretty; shopify app deploy;",
+    "update:url": "node _developer/updateDashboard.js",
+    "-----> Reserved Scripts <-----": "",
+    "preserve": "npm run build"
+  },
+  "dependencies": {
+    "@shopify/app-bridge-react": "^4.2.1",
+    "@shopify/polaris": "^13.9.5",
+    "@shopify/shopify-api": "^11.14.1",
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "cryptr": "^6.3.0",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.4",
+    "node-fetch": "^3.3.2",
+    "raviger": "^5.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "serve-static": "^2.2.0"
+  },
+  "devDependencies": {
+    "@iarna/toml": "^2.2.5",
+    "@shopify/cli-kit": "^3.82.1",
+    "@vitejs/plugin-react": "^4.7.0",
+    "concurrently": "^9.2.0",
+    "ngrok": "^5.0.0-beta.2",
+    "nodemon": "^3.1.10",
+    "npm-check-updates": "^18.0.1",
+    "prettier": "^3.6.2",
+    "vite": "^7.0.5"
+  }
+}
