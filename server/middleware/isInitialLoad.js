@@ -25,14 +25,13 @@ const isInitialLoad = async (req, res, next) => {
         shop,
         requestedTokenType: RequestedTokenType.OnlineAccessToken,
       });
-      console.log('storing session');
+
       await sessionHandler.storeSession(offlineSession);
       await sessionHandler.storeSession(onlineSession);
-      console.log('session stored and now registering webhook');
+      console.log('registering webhook',offlineSession);
       const webhookRegistrar = await shopify.webhooks.register({
         session: offlineSession,
       });
-      console.log("this one after webhook registerar")
       const isFreshInstall = await StoreModel.findOne({
         shop: onlineSession.shop,
       });
