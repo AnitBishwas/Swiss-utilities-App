@@ -37,4 +37,4 @@ jobs:
       run: sudo docker rm -f swiss-utilities || true
     - name: Run Docker Container
       run: |
-         sudo docker run --env-file ~/secrets/.env -d -p 8082:8082 --restart=always --name swiss-utilities anitbishwas/swiss-utilities
+         sudo docker run --env-file ~/secrets/.env -d -p 8082:8082 --name swiss-utilities anitbishwas/swiss-utilities
