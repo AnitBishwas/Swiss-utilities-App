@@ -9,7 +9,7 @@ import {
 } from "../../../controllers/wishlist/index.js";
 import cookie from "cookie";
 import createBigQueryEvent from "../../../controllers/bigquery/index.js";
-import logsStorage from "../../../controllers/logs/logsStorage.js";
+import logsStorage from "../../../controllers/logger/logsStorage.js";
 
 
 const wishlistPublicRoute = Router();
