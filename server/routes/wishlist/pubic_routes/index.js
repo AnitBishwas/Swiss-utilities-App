@@ -1,5 +1,4 @@
 import { Router } from "express";
-import logsStorage from "../../../controllers/logs/logsStorage.js";
 import UserModel from "../../../../utils/models/wishlist/User.js";
 import {
   addItemToWishlist,
@@ -10,6 +9,8 @@ import {
 } from "../../../controllers/wishlist/index.js";
 import cookie from "cookie";
 import createBigQueryEvent from "../../../controllers/bigquery/index.js";
+import logsStorage from "../../../controllers/logs/logsStorage.js";
+
 
 const wishlistPublicRoute = Router();
 
