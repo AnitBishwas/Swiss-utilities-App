@@ -1,5 +1,5 @@
 import { Router } from "express";
-import logsStorage from "../../../../utils/logs/logsStorage.js";
+import logsStorage from "../../../controllers/logs/logsStorage.js";
 import UserModel from "../../../../utils/models/wishlist/User.js";
 import {
   addItemToWishlist,
