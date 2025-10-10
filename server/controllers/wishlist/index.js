@@ -126,11 +126,11 @@ const addItemToWishlist = async ({
     };
     const item = await ItemModel.findOneAndUpdate(conditions, updates, {
       upsert: true,
-      new: true
+      new: true,
     }).lean();
     return item;
   } catch (err) {
-    console.log(err)
+    console.log(err);
     throw new Error("Failed to add item to wishlistb reason -->" + err.message);
   }
 };
