@@ -1,7 +1,9 @@
 import { Router } from "express";
 import clientProvider from "../../../utils/clientProvider.js";
+import wishlistProxyRoutes from "../wishlist/proxy_routes/index.js";
+import { sessionMiddleware } from "../../middleware/wishlist/session.js";
+
 const proxyRouter = Router();
-import loginProxyRoutes from "../../login/proxy_routes/index.js";
 
 /**
  * @param {import('express').Request} req - Express request object
@@ -18,5 +20,5 @@ proxyRouter.get("/json", async (req, res) => {
     return res.status(400).send({ error: true });
   }
 });
-proxyRouter.use("/login", loginProxyRoutes);
+proxyRouter.use("/wishlist", wishlistProxyRoutes);
 export default proxyRouter;

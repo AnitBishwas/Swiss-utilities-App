@@ -31,17 +31,19 @@
     "@shopify/polaris": "^13.9.5",
     "@shopify/shopify-api": "^11.14.1",
     "compression": "^1.8.1",
+    "cookie": "^1.0.2",
     "cors": "^2.8.5",
-    "crypto": "^1.0.1",
     "cryptr": "^6.3.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.16.4",
     "node-fetch": "^3.3.2",
     "raviger": "^5.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "serve-static": "^2.2.0"
+    "serve-static": "^2.2.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@iarna/toml": "^2.2.5",

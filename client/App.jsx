@@ -14,6 +14,7 @@ export default function App() {
       <AppBridgeProvider>
         <ui-nav-menu>
           <Link href="/sale">Sale</Link>
+          <Link href="/listing">Listing</Link>
         </ui-nav-menu>
         {RouteComponents}
       </AppBridgeProvider>

@@ -13,8 +13,7 @@ import { navigate } from "raviger";
 const HomePage = () => {
   return (
     <>
-      <Page title="Home">
-      </Page>
+      <Page title="Home"></Page>
     </>
   );
 };

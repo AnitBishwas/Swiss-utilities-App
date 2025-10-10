@@ -212,7 +212,6 @@ userRoutes.get("/debug/createNewSubscription", async (req, res) => {
   }
 });
 
-userRoutes.use("/sale",saleUserRoutes);
-
+userRoutes.use("/sale", saleUserRoutes);
 
 export default userRoutes;

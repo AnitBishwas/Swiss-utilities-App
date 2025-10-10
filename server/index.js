@@ -24,6 +24,9 @@ import proxyRouter from "./routes/app_proxy/index.js";
 import checkoutRoutes from "./routes/checkout/index.js";
 import userRoutes from "./routes/index.js";
 import webhookHandler from "./webhooks/_index.js";
+import { wishlistPublicAuthenticator } from "./middleware/wishlist/authenticator.js";
+import wishlistPublicRoute from "./routes/wishlist/pubic_routes/index.js";
+import { sessionMiddleware } from "./middleware/wishlist/session.js";
 
 setupCheck(); // Run a check to ensure everything is setup properly
 
@@ -84,7 +87,20 @@ const createServer = async (root = process.cwd()) => {
     verifyCheckout,
     checkoutRoutes
   );
-
+  app.use(
+    "/api/wishlist",
+    cors({
+      origin:
+        process.env.NODE_ENV == "dev"
+          ? "http://localhost:9292"
+          : "https://swissbeauty.in",
+      methods: ["GET", "POST", "OPTIONS"],
+      optionsSuccessStatus: 200,
+      credentials: true,
+    }),
+    wishlistPublicAuthenticator,
+    wishlistPublicRoute
+  );
   app.post("/api/gdpr/:topic", verifyHmac, async (req, res) => {
     const { body } = req;
     const { topic } = req.params;
