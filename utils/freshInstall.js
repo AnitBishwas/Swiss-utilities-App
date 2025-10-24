@@ -8,7 +8,6 @@
 import StoreModel from "./models/StoreModel.js";
 
 const freshInstall = async ({ shop }) => {
-  console.log("This is a fresh install - run functions");
   await StoreModel.findOneAndUpdate(
     { shop: shop },
     { isActive: true },
