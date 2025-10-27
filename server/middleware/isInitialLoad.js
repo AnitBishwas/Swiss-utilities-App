@@ -13,7 +13,7 @@ const isInitialLoad = async (req, res, next) => {
   try {
     const shop = req.query.shop;
     const idToken = req.query.id_token;
-    console.log(shop, idToken, "Herrererer is the token");
+    console.dir(process.env,{depth: null});
     if (shop && idToken) {
       const { session: offlineSession } = await shopify.auth.tokenExchange({
         sessionToken: idToken,
