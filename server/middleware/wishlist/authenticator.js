@@ -3,6 +3,7 @@ import { verifyToken } from "../../controllers/wishlist/token.js";
 
 const wishlistPublicAuthenticator = async (req, res, next) => {
   try {
+    console.log('public rout was hit')
     const storeDomain = req.headers["x-shopify-domain"];
     const authToken = req.headers["authorization"]
       ?.replace("Bearer", "")
