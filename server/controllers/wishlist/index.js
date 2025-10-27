@@ -19,7 +19,7 @@ const initNewUser = async ({ customerId, shop }) => {
   try {
     let user = null;
     if (!customerId) {
-      console.log('intialising new user here')
+      console.log("intialising new user here");
       user = new UserModel({
         uuid: uuidv4(),
       });

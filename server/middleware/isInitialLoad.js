@@ -12,7 +12,7 @@ import freshInstall from "../../utils/freshInstall.js";
 const isInitialLoad = async (req, res, next) => {
   try {
     console.dir(process.env, { depth: null });
-    
+
     const shop = req.query.shop;
     const idToken = req.query.id_token;
     if (shop && idToken) {
