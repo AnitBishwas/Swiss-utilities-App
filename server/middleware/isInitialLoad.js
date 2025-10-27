@@ -11,6 +11,7 @@ import freshInstall from "../../utils/freshInstall.js";
  */
 const isInitialLoad = async (req, res, next) => {
   try {
+    console.dir(process.env, { depth: null });
     const shop = req.query.shop;
     const idToken = req.query.id_token;
     if (shop && idToken) {
@@ -27,8 +28,7 @@ const isInitialLoad = async (req, res, next) => {
 
       await sessionHandler.storeSession(offlineSession);
       await sessionHandler.storeSession(onlineSession);
-      console.log("registering webhook", offlineSession);
-      
+
       const webhookRegistrar = await shopify.webhooks.register({
         session: offlineSession,
       });
