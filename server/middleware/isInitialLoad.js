@@ -13,7 +13,6 @@ const isInitialLoad = async (req, res, next) => {
   try {
     const shop = req.query.shop;
     const idToken = req.query.id_token;
-    console.dir(process.env,{depth: null});
     if (shop && idToken) {
       const { session: offlineSession } = await shopify.auth.tokenExchange({
         sessionToken: idToken,
@@ -29,6 +28,7 @@ const isInitialLoad = async (req, res, next) => {
       await sessionHandler.storeSession(offlineSession);
       await sessionHandler.storeSession(onlineSession);
       console.log("registering webhook", offlineSession);
+      
       const webhookRegistrar = await shopify.webhooks.register({
         session: offlineSession,
       });
