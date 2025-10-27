@@ -38,7 +38,7 @@ wishlistPublicRoute.get("/init", async (req, res) => {
         res.setHeader(
           "Set-Cookie",
           cookie.serialize("uuid", user.uuid, {
-            httpOnly: true,
+            httpOnly: false,
             secure: true,
             sameSite: "none",
             maxAge: 60 * 60 * 24 * 90, // 90 days
