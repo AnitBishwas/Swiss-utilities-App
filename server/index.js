@@ -71,7 +71,7 @@ const createServer = async (root = process.cwd()) => {
   });
 
   app.use(csp);
-  app.use(isInitialLoad); 
+  app.use(isInitialLoad);
   //Routes to make server calls
   app.use("/api/apps", verifyRequest, userRoutes); //Verify user route requests
   app.use("/api/proxy_route", verifyProxy, proxyRouter); //MARK:- App Proxy routes
@@ -187,3 +187,5 @@ if (isDev) {
     });
   });
 }
+
+
