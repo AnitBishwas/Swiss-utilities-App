@@ -9,7 +9,6 @@ import shopify from "./shopify.js";
 const fetchOfflineSession = async (shop) => {
   const sessionID = shopify.session.getOfflineId(shop);
   const session = await sessionHandler.loadSession(sessionID);
-  console.log("Here Session data:", session);
   return session;
 };
 
@@ -56,7 +55,6 @@ const fetchOnlineSession = async ({ req, res }) => {
     rawResponse: res,
   });
   const session = await sessionHandler.loadSession(sessionID);
-  console.log("Here Session data:", session);
   return session;
 };
 
