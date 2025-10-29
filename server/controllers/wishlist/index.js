@@ -39,7 +39,7 @@ const initNewUser = async ({ customerId, shop }) => {
       });
       await user.save().toObject();
     };
-    console.log(user)
+    console.log(user,'here user is initialised')
     return user;
   } catch (err) {
     throw new Error("Failed to init new customer reason -->" + err.message);
