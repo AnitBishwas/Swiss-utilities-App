@@ -26,6 +26,7 @@ import userRoutes from "./routes/index.js";
 import webhookHandler from "./webhooks/_index.js";
 import { wishlistPublicAuthenticator } from "./middleware/wishlist/authenticator.js";
 import wishlistPublicRoute from "./routes/wishlist/pubic_routes/index.js";
+import "./../utils/debugger/fetchLogger.js";
 
 setupCheck(); // Run a check to ensure everything is setup properly
 
