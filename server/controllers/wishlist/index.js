@@ -37,7 +37,7 @@ const initNewUser = async ({ customerId, shop }) => {
         phone: customerInfo.phone,
         email: customerInfo.email,
       });
-      await user.save().toObject();
+      (await user.save()).toObject();
     };
     console.log(user,'here user is initialised');
     return user;
