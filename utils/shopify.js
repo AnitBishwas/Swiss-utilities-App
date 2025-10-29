@@ -15,7 +15,6 @@ let shopify = shopifyApi({
   apiVersion: process.env.SHOPIFY_API_VERSION,
   isEmbeddedApp: true,
   logger: { level: isDev ? LogSeverity.Info : LogSeverity.Debug, httpRequests: true },
-
 });
 
 /*
