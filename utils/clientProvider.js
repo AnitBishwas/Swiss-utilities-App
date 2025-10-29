@@ -1,5 +1,6 @@
 import sessionHandler from "./sessionHandler.js";
 import shopify from "./shopify.js";
+import "./debugger/fetchLogger.js";
 
 /**
  * Fetches the offline session associated with a shop.
