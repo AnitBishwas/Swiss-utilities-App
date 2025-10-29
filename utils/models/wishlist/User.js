@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
   },
   uuid: {
     type: String,
-    required: true,
   },
   phone: {
     type: String,
