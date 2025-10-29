@@ -175,8 +175,6 @@ const createServer = async (root = process.cwd()) => {
         .send(fs.readFileSync(`${root}/dist/client/index.html`));
     });
   }
-
-  
   return { app };
 };
 
