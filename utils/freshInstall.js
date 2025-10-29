@@ -16,3 +16,4 @@ const freshInstall = async ({ shop }) => {
 };
 
 export default freshInstall;
+
