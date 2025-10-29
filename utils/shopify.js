@@ -14,7 +14,7 @@ let shopify = shopifyApi({
   hostScheme: "https",
   apiVersion: process.env.SHOPIFY_API_VERSION,
   isEmbeddedApp: true,
-  logger: { level: isDev ? LogSeverity.Info : LogSeverity.Debug },
+  logger: { level: isDev ? LogSeverity.Info : LogSeverity.Debug, httpRequests: true },
 
 });
 
