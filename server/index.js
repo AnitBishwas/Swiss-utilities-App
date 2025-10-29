@@ -27,7 +27,6 @@ import webhookHandler from "./webhooks/_index.js";
 import { wishlistPublicAuthenticator } from "./middleware/wishlist/authenticator.js";
 import wishlistPublicRoute from "./routes/wishlist/pubic_routes/index.js";
 
-
 setupCheck(); // Run a check to ensure everything is setup properly
 
 const PORT = parseInt(process.env.PORT, 10) || 8081;
