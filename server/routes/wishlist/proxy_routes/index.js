@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { generateToken } from "../../../controllers/wishlist/token.js";
+import createServerEvent from "../../../controllers/bigquery/index.js";
 
 const wishlistProxyRoutes = Router();
 
@@ -23,5 +24,19 @@ wishlistProxyRoutes.post("/generateToken", async (req, res) => {
     });
   }
 });
-
+wishlistProxyRoutes.post("/events", async (req, res) => {
+  try {
+    const payload = req.body;
+    if(!req.body || !payload.eventName){
+      throw new Error("Required params missing");
+    }
+    const eventInsertion = await createServerEvent(payload);
+  } catch (err) {
+    console.log("Failed to handle events reason -->" + err.message);
+    res.status(420).send({
+      ok: false,
+      message: err.message
+    })
+  }
+});
 export default wishlistProxyRoutes;

@@ -8,7 +8,6 @@ import {
   removeItemFromWishlist,
 } from "../../../controllers/wishlist/index.js";
 import cookie from "cookie";
-import createBigQueryEvent from "../../../controllers/bigquery/index.js";
 import logsStorage from "../../../controllers/logger/logsStorage.js";
 
 const wishlistPublicRoute = Router();
@@ -51,11 +50,6 @@ wishlistPublicRoute.get("/init", async (req, res) => {
       customerId: customerId,
       uuid: uuid,
       shop,
-    });
-    createBigQueryEvent({
-      name: "wishlist_loaded",
-      customer: customerId,
-      items: wishlistItems,
     });
     res.status(200).send({
       ok: true,
