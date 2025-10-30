@@ -30,7 +30,7 @@ wishlistProxyRoutes.post("/events", async (req, res) => {
     if (!req.body || !payload.eventName) {
       throw new Error("Required params missing");
     }
-    const eventInsertion = await createServerEvent(payload);
+    const eventInsertion = await createServerEvent({...payload});
     res.status(200).send({
       ok: true
     })
