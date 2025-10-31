@@ -1,7 +1,6 @@
 import { Router } from "express";
 import clientProvider from "../../../utils/clientProvider.js";
 import wishlistProxyRoutes from "../wishlist/proxy_routes/index.js";
-import { sessionMiddleware } from "../../middleware/wishlist/session.js";
 
 const proxyRouter = Router();
 

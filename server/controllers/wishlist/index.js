@@ -19,7 +19,6 @@ const initNewUser = async ({ customerId, shop }) => {
   try {
     let user = null;
     if (!customerId) {
-      console.log("intialising new user here");
       user = new UserModel({
         uuid: uuidv4(),
       });
@@ -39,7 +38,6 @@ const initNewUser = async ({ customerId, shop }) => {
       });
       (await user.save()).toObject();
     }
-    console.log(user, "here user is initialised");
     return user;
   } catch (err) {
     throw new Error("Failed to init new customer reason -->" + err.message);

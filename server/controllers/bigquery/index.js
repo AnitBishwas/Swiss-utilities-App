@@ -95,7 +95,7 @@ const transformToBigQuerySchema = (rawEvent, options = {}) => {
 
 const createServerEvent = async ({ eventName = "", params = {} }) => {
   try {
-    console.log('creating server event',params,eventName)
+    console.log("creating server event", params, eventName);
     const parsedData = transformToBigQuerySchema({
       eventName,
       ...params,
