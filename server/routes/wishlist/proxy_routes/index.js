@@ -38,7 +38,8 @@ wishlistProxyRoutes.post("/init", async (req, res) => {
       req.query.logged_in_customer_id.trim().length > 0
         ? req.query.logged_in_customer_id
         : null;
-    let uuid = req.headers["x-uuid"]?.trim().length > 4 ? req.headers["x-uuid"] : null;
+    let uuid =
+      req.headers["x-uuid"]?.trim().length > 4 ? req.headers["x-uuid"] : null;
     let shop = req.query.shop;
     let user = null;
     if (customerId) {
