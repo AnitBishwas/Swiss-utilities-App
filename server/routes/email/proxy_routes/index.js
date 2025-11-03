@@ -23,12 +23,12 @@ emailProxyRoutes.post("/contact_email", async (req, res) => {
       name: payload.name,
       email: payload.customerEmail,
       phone: payload.phone,
-      message: payload.message
+      message: payload.message,
     });
     await sendEmail(payload.email, templateContent);
     res.status(200).send({
-        ok: true
-    })
+      ok: true,
+    });
   } catch (err) {
     console.log("Failed to handle contact email reason -->" + err.message);
     res.status(420).send({
