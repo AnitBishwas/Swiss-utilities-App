@@ -149,10 +149,7 @@ wishlistProxyRoutes.post("/bulk_remove", async (req, res) => {
       throw new Error("Required params missing");
     }
     const removeItems = await clearItemsForUser({ customerId, uuid });
-    const newItemList = await getWishlistItems({ customerId, uuid, shop });
-    res
-      .status(200)
-      .send({ ok: true, customer: customerId || null, items: newItemList });
+    res.status(200).send({ ok: true, customer: customerId || null, items: [] });
   } catch (err) {
     console.log(
       "Failed to bulk remove products from wishlist reason -->" + err.message
@@ -172,8 +169,10 @@ wishlistProxyRoutes.post("/events", async (req, res) => {
     }
     if (uuid && !customerId) {
       payload["uuid"] = uuid;
-    }
-    const eventInsertion = await createServerEvent({ ...payload });
+    };
+    const eventName = payload.eventName;
+    delete payload.eventName;
+    const eventInsertion = await createServerEvent({ eventName,params: payload });
     res.status(200).send({
       ok: true,
     });
