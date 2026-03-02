@@ -169,10 +169,13 @@ wishlistProxyRoutes.post("/events", async (req, res) => {
     }
     if (uuid && !customerId) {
       payload["uuid"] = uuid;
-    };
+    }
     const eventName = payload.eventName;
     delete payload.eventName;
-    const eventInsertion = await createServerEvent({ eventName,params: payload });
+    const eventInsertion = await createServerEvent({
+      eventName,
+      params: payload,
+    });
     res.status(200).send({
       ok: true,
     });

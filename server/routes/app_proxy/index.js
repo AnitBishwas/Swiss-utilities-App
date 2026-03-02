@@ -2,6 +2,7 @@ import { Router } from "express";
 import clientProvider from "../../../utils/clientProvider.js";
 import wishlistProxyRoutes from "../wishlist/proxy_routes/index.js";
 import emailProxyRoutes from "../email/proxy_routes/index.js";
+import notifyProxyRoutes from "../notify/proxy_routes/index.js";
 
 const proxyRouter = Router();
 
@@ -22,4 +23,6 @@ proxyRouter.get("/json", async (req, res) => {
 });
 proxyRouter.use("/wishlist", wishlistProxyRoutes);
 proxyRouter.use("/email", emailProxyRoutes);
+proxyRouter.use("/notify", notifyProxyRoutes);
+
 export default proxyRouter;
