@@ -18,7 +18,7 @@ const createNotificationSubscription = async ({ shop, phone, variants }) => {
       shop,
       normalisedPhone
     );
-    for(let i = 0; i < variants.length; i++){
+    for (let i = 0; i < variants.length; i++) {
       let variantId = variants[i];
       const productInfo = await getShopifyProductInfoViaVariantId(
         shop,

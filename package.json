@@ -21,7 +21,7 @@
     "-----> Shopify <-----": "",
     "g:install": "npm i -g @shopify/cli@latest",
     "shopify": "shopify",
-    "update:config": "node _developer/tomlWriter.js; npm run pretty; shopify app deploy;",
+    "update:config": "node _developer/confirm.js && node _developer/tomlWriter.js && npm run pretty && shopify app deploy;",
     "update:config:dev": "dotenvx run --env-file=.env.dev node _developer/tomlWriter.js; npm run pretty; shopify app deploy;",
     "update:url": "node _developer/updateDashboard.js",
     "-----> Reserved Scripts <-----": "",

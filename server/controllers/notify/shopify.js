@@ -48,8 +48,8 @@ const getShopifyCustomerDetailsViaPhone = async (shop, phone) => {
 
     const best = edges
       .map(({ node }) => {
-        const nodePhone = node?.phone;
-        const addrPhone = node?.defaultAddress?.phone;
+        const nodePhone = node?.phone || "";
+        const addrPhone = node?.defaultAddress?.phone || "";
         const matches =
           nodePhone === phone ||
           addrPhone === phone ||
