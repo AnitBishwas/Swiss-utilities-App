@@ -8,7 +8,7 @@ const emailProxyRoutes = Router();
 emailProxyRoutes.post("/contact_email", async (req, res) => {
   try {
     const payload = req.body;
-    if (!payload?.customerEmail || !payload.email || !payload.title) {
+    if (!payload?.customerEmail || payload.email.length == 0 || !payload.title) {
       throw new Error("Required params missing");
     }
     const templatePath = path.join(
