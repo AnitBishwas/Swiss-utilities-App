@@ -9,15 +9,15 @@ const sesConfig = {
 
 const AWS_SES = new AWS.SES(sesConfig);
 
-const sendEmail = async (email, content) => {
+const sendEmail = async (emailList, content) => {
   try {
-    if (!email || !content) {
+    if (emailList.length == 0 || !content) {
       throw new Error("Required params missing");
     }
     let params = {
       Source: "support@swissbeauty.in",
       Destination: {
-        ToAddresses: [email],
+        ToAddresses: emailList,
       },
       ReplyToAddresses: [],
       Message: {
