@@ -25,7 +25,7 @@ emailProxyRoutes.post("/contact_email", async (req, res) => {
       phone: payload.phone,
       message: payload.message,
     });
-    await sendEmail(payload.email, templateContent);
+    await sendEmail(payload.email, templateContent, payload.customerEmail);
     res.status(200).send({
       ok: true,
     });
