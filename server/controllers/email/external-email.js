@@ -9,7 +9,7 @@ const sesConfig = {
 
 const AWS_SES = new AWS.SES(sesConfig);
 
-const sendEmail = async (emailList, content) => {
+const sendEmail = async (emailList, content, customerEmail) => {
   try {
     if (emailList.length == 0 || !content) {
       throw new Error("Required params missing");
@@ -19,7 +19,7 @@ const sendEmail = async (emailList, content) => {
       Destination: {
         ToAddresses: emailList,
       },
-      ReplyToAddresses: [],
+      ReplyToAddresses: customerEmail ? [customerEmail] : [],
       Message: {
         Body: {
           Html: {
